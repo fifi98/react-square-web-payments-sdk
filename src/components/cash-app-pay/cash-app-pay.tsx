@@ -84,8 +84,9 @@ function CashAppPay({
 
     start(signal);
 
-    return () => {
+    return () => {      
       abortController.abort();
+      cashApp?.destroy();
     };
   }, [createPaymentRequest, options, paymentRequestOptions, payments]);
 
